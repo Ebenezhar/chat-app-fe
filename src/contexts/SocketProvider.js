@@ -10,7 +10,7 @@ export function useSocket() {
 export function SocketProvider({ id, children }) {
     const [socket, setSocket] = useState()
     useEffect(() => {
-        const newSocket = io('http://localhost:3001',
+        const newSocket = io('https://chatapp-clone01.herokuapp.com',
             { query: { id } }
         )
         setSocket(newSocket)
