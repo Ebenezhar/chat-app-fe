@@ -13,7 +13,8 @@ function Login({ onIdSubmit }) {
     }
 
     return (
-        <Container className='align-items-center d-flex' style={{ height: '100vh' }}>
+        <Container className='align-items-center d-flex flex-column justify-content-md-center' style={{ height: '100vh' }}>
+            <h1>Chat Application</h1>
             <Form onSubmit={handleSubmit} className='w-100'>
                 <Form.Group>
                     <Form.Label>Enter your Id</Form.Label>
