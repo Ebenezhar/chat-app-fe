@@ -15,7 +15,7 @@ function Sidebar({ id }) {
         setModalOpen(false)
     }
     return (
-        <div style={{ width: '250px' }} className='d-flex flex-column'>
+        <div style={{ width: '250px' }} className='d-flex flex-column '>
             <Tab.Container activeKey={activeKey} onSelect={setActiveKey}>
                 <Nav variant='tabs' className='justify-content-center'>
                     <Nav.Item>
@@ -25,7 +25,7 @@ function Sidebar({ id }) {
                         <Nav.Link eventKey={CONTACTS_KEY}>Contacts</Nav.Link>
                     </Nav.Item>
                 </Nav>
-                <Tab.Content className='border-right overflow-auto flex-grow-1' >
+                <Tab.Content className='border border-dark overflow-auto flex-grow-1' >
                     <Tab.Pane eventKey={CONVERSATIONS_KEY}>
                         <Conversations />
                     </Tab.Pane>
@@ -33,10 +33,10 @@ function Sidebar({ id }) {
                         <Contacts />
                     </Tab.Pane>
                 </Tab.Content>
-                <div className='p-2 border-top border-right small'>
+                <div className='p-2 border-top border border-dark small'>
                     YourId:<span className='text-muted'>{id}</span>
                 </div>
-                <Button onClick={() => setModalOpen(true)} className='rounded-0'>
+                <Button onClick={() => setModalOpen(true)} className='rounded-0 border border-dark'>
                     New {conversationsOpen ? "Coversation" : "Contact"}
                 </Button>
             </Tab.Container>
