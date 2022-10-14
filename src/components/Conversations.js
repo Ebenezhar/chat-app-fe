@@ -12,6 +12,7 @@ function Conversations() {
                 conversations ? conversations.map((conversation, index) => (
                     <ListGroup.Item
                         key={index}
+                        active={conversation.selected}
                         action
                         onClick={() => selectConversationIndex(index)}
                     >
