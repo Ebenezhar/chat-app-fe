@@ -15,14 +15,14 @@ function Login({ onIdSubmit }) {
     return (
         <Container className='align-items-center d-flex flex-column justify-content-md-center' style={{ height: '100vh' }}>
             <h1>Chat Application</h1>
-            <Form onSubmit={handleSubmit} className='w-100'>
-                <Form.Group>
+            <Form className='border border-secondary p-5' onSubmit={handleSubmit} >
+                <Form.Group className='col'>
                     <Form.Label>Enter your Id</Form.Label>
                     <Form.Control type='text' placeholder='John Doe' ref={idRef} required />
                 </Form.Group>
-                <div className='mt-2 gap-3'>
-                    <Button type="submit" className="mr-2" >Login</Button>
-                    <Button onClick={createNewId} variant="secondary" >Create new Id</Button>
+                <div className='mt-3 d-flex flex-column'>
+                    <Button type="submit" className="mb-2" >Login</Button>
+                    <Button className="ml-2" onClick={createNewId} variant="secondary" >Create new Id</Button>
                 </div>
             </Form>
         </Container>
