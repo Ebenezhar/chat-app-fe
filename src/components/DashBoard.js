@@ -9,7 +9,6 @@ function DashBoard({ id }) {
         <div className='d-flex border border-dark' style={{ height: "100vh" }}>
             <Sidebar id={id} />
             {selectedConversation && <OpenConversation />}
-
         </div>
 
     )

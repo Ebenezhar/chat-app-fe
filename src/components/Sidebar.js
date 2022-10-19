@@ -4,6 +4,7 @@ import Contacts from './Contacts'
 import Conversations from './Conversations'
 import NewConversationModal from './NewConversationModal'
 import NewContactModal from './NewContactModal'
+import { useNavigation } from 'react-router-dom'
 const CONVERSATIONS_KEY = "conversations"
 const CONTACTS_KEY = "contacts"
 
@@ -13,6 +14,22 @@ function Sidebar({ id }) {
     const conversationsOpen = activeKey === CONVERSATIONS_KEY
     function closeModal() {
         setModalOpen(false)
+    }
+    const handleLogout = () => {
+        if (window.confirm("Do you really want to Logout?")) {
+            try {
+                localStorage.removeItem('chat-app-conversations');
+                localStorage.removeItem('chat-app-id');
+                localStorage.removeItem('chat-app-contacts');
+                // navigate('/')
+                window.location.href = window.location.href;
+                // window.location.href = window.location.href;
+
+            } catch (error) {
+                console.log(error);
+            }
+        }
+
     }
     return (
         <div style={{ width: '250px' }} className='d-flex flex-column '>
@@ -39,6 +56,7 @@ function Sidebar({ id }) {
                 <Button onClick={() => setModalOpen(true)} className='rounded-0 border border-dark'>
                     New {conversationsOpen ? "Coversation" : "Contact"}
                 </Button>
+                <Button onClick={() => handleLogout()} className='m-1 mx-5 rounded-0 border border-dark btn btn-outline-danger font-weight-bold'>Logout</Button>
             </Tab.Container>
             <Modal show={modalOpen} onHide={closeModal}>
                 {conversationsOpen ? <NewConversationModal closeModal={closeModal} /> : <NewContactModal closeModal={closeModal} />}
