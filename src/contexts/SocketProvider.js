@@ -10,7 +10,7 @@ export function useSocket() {
 export function SocketProvider({ id, children }) {
     const [socket, setSocket] = useState()
     useEffect(() => {
-        const newSocket = io('https://chatapp-clone01.herokuapp.com',
+        const newSocket = io('https://chat-app-be.vercel.app',
             { query: { id } }
         )
         setSocket(newSocket)
